@@ -14,7 +14,7 @@ First, we provide results on CIFAR-10 (iD) vs Tiny-ImageNet (OoD):
 
 AUROC on Tiny-ImageNet for models trained on CIFAR-10:
 
-|          | AUROC (OOD)   |
+|          | AUROC (OOD) ⇈  |
 |----------|---------------|
 | Softmax  | 88.42 +- 0.05 |
 | SNGP     | 89.96 +- 0.08 |
@@ -53,5 +53,12 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/gmm_density.png" width="39%">
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/softmax_entropy.png" width="39%">
 </span>
+
+|  Train Set  | Avg Softmax Entropy (Test Set) ≈ | Avg Log GMM Density (Test Set) ⇈ |
+|-----------------|-------------------------|-------------------------|
+| 1% of D-MNIST   |                  0.7407 | -2.7268e+14             |
+| 2% of D-MNIST   |                  0.6580 | -7.8633e+13             |
+| 10% of D-MNIST  |                  0.8295 | -1279.1753              |
+
 
 Are there any additional experiments you could suggest to study the properties of the uncertainty? We will gladly try to provide additional results during the rebuttal phase.
