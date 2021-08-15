@@ -36,15 +36,19 @@ Secondly, we provide results on CIFAR-10-C. (Metric used: Softmax Entropy, Ensem
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_motion_blur.png" width="39%">
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_gaussian_noise.png" width="39%">
 <details>
-  <summary><strong>Click here to see all CIFAR-10-C Corruptions</strong></summary>
-<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_contrast.png" width="39%">
+  <summary><strong>Click here to see all CIFAR-10-C corruptions results</strong></summary>
+  <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_brightness.png" width="39%">
+  <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_contrast.png" width="39%">
+  <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_defocus_blur.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_elastic_transform.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_fog.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_frost.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_gaussian_blur.png" width="39%">
+  <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_gaussian_noise.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_glass_blur.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_impulse_noise.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_jpeg_compression.png" width="39%">
+  <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_motion_blur.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_pixelate.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_saturate.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_shot_noise.png" width="39%">
