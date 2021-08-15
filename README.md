@@ -30,13 +30,12 @@ Here DDU also outperforms Deep Ensembles as well as the other single-forward-pas
 
 Secondly, we provide results on CIFAR-10-C. (Metric used: Softmax Entropy, Ensemble PE and DDU density)
 
+Below, we provide a plot averaged over all corruptions as well as plots for each individual corruption type.
+
 <span>
-<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_brightness.png" width="39%">
-<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_defocus_blur.png" width="39%">
-<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_motion_blur.png" width="39%">
-<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_gaussian_noise.png" width="39%">
+<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c.png" width="49%">
 <details>
-  <summary><strong>Click here to see all CIFAR-10-C corruptions results</strong></summary>
+  <summary><strong>Please expand here to see all individual CIFAR-10-C results</strong></summary>
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_brightness.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_contrast.png" width="39%">
   <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/cifar10_c_defocus_blur.png" width="39%">
