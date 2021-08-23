@@ -81,7 +81,7 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 | 10% of D-MNIST  |                  0.8295 | -1279.1753              |
 
 
-## Ablations: VGG with SN, Ensembles with SN
+## Ablation: Ensemble with SN
 
 
 |     Model       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR-100 |
@@ -98,6 +98,20 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 | WRN+SN Ensemble | 83.06+-0.07 | 2.17+-0.1   | 80.30+-0.85 |
 | VGG Ensemble    | 77.84+-0.11 | 5.32+-0.10  | 79.62+-0.73 |
 | VGG+SN Ensemble | 77.98+-0.06 | 3.001+-0.05 | 73.64+-1.03 |
+
+
+## Ablation: VGG + SN
+
+
+| SN  |       Method       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR100 |
++-----+--------------------+-------------+------------+-------------+----------------+
+|     | Softmax            |             |            | 85.76+-0.84 | 82.48+-0.14    |
+| No  | Energy-based model | 93.63+-0.04 | 1.64+-0.03 | 84.24+-1.04 | 81.91+-0.17    |
+|     | GMM Density        |             |            | 89.25+-0.36 | 86.55+-0.10    |
+|     | Softmax            |             |            | 86.55+-0.51 | 82.40+-0.09    |
+| Yes | Energy-based model | 93.56+-0.03 | 1.69+-0.04 | 84.77+-0.68 | 81.79+-0.11    |
+|     | GMM Density        |             |            | 89.51+-0.33 | 86.52+-0.12    |
+
 
 
 Are there any additional experiments you could suggest to study the properties of the uncertainty? We will gladly try to provide additional results during the rebuttal phase.
