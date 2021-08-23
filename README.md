@@ -83,6 +83,7 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 
 ## Ablation: Ensemble with SN
 
+In this section, we present results for ensembles of models trained using spectral normalization (SN). The first table below is for models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. We note that in general, ensembles of models trained with SN don't outperform those trained without SN.
 
 |     Model       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR-100 |
 |-----------------|-------------|------------|-------------|-----------------|
@@ -100,8 +101,9 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 | VGG+SN Ensemble | 77.98+-0.06 | 3.001+-0.05 | 73.64+-1.03 |
 
 
-## Ablation: VGG + SN
+## Ablation: VGG with SN
 
+In this section, we present results for VGG models trained using spectral normalization (SN). The first table below is for VGG models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. We note that SN does not improve the OoD detection performance for VGG models. The VGG architecture, due to the lack of residual connections does not encourage sensitivity in the feature space. Addition of SN does not help with sensitivity either as SN encourages smoothness in the feature space by upper bounding the Lipschitzness of the model. Hence, we don't see an improvement in performance for VGG models trained with spectral normalization.
 
 | SN  |       Method       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR100 |
 |-----|--------------------|-------------|------------|-------------|----------------|
