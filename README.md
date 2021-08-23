@@ -113,5 +113,13 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 | Yes | GMM Density        | 93.56+-0.03 | 1.69+-0.04 | 89.51+-0.33 | 86.52+-0.12    |
 
 
+| SN  |       Method       |  Accuracy   |    ECE     | AUROC SVHN  |
+|-----|--------------------|-------------|------------|-------------|
+| No  | Softmax            | 73.48+-0.05 | 4.46+-0.05 | 76.73+-0.72 |
+| No  | Energy-based model | 73.48+-0.05 | 4.46+-0.05 | 77.70+-0.86 |
+| No  | GMM Density        | 73.48+-0.05 | 4.46+-0.05 | 75.65+-0.95 |
+| Yes | Softmax            | 73.56+-0.05 | 4.49+-0.06 | 76.43+-0.74 |
+| Yes | Energy-based model | 73.56+-0.05 | 4.49+-0.06 | 77.07+-0.84 |
+| Yes | GMM Density        | 73.56+-0.05 | 4.49+-0.06 | 75.05+-1.41 |
 
 Are there any additional experiments you could suggest to study the properties of the uncertainty? We will gladly try to provide additional results during the rebuttal phase.
