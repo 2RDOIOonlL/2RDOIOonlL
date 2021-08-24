@@ -126,10 +126,12 @@ In this section, we present results for VGG models trained using spectral normal
 
 ## Algorithm Box
 
+In order to shorten the algorithm section, we plan on merging the text in Section 5 (Algorithm) of the paper with Appendix B (Additional Architectural Changes). We will rename Appendix B to "Explanation of DDU Algorithm". In the main paper, we instead plan on putting a succinct algorithm box as shown below.
 <span>
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/ddu_algorithm.PNG" width="80%">
 </span>
 
+For the ease of readers, we also plan to add in a pseudocode of the algorithm, as shown below, in Appendix B.
 <span>
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/ddu_pseudocode.PNG" width="80%">
 </span>
