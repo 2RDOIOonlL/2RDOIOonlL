@@ -130,7 +130,9 @@ In this section, we present results for VGG models trained using spectral normal
 
 -- with CIFAR-100 as iD dataset
 
-## Toy Example: Separate Objectives Have Different Optima (Proposition 4.3)
+## Toy Example: Different Objectives Have Different Optima (Proposition 4.3)
+
+In the following toy example, we retrace proposition 4.3 and visualize that different objectives lead to different optima. We exactly follow the construction in the proof for 4.3 in the appendix. We hope this provides an additional more visual explanation and examination of the proposition.
 
 ### (Class) Density Plots
 <span>
@@ -142,6 +144,8 @@ In this section, we present results for VGG models trained using spectral normal
 <span>
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/separate_objective_2.png" width="80%">
 </span>
+
+-- Yellow star at (0, -5) marked for comparison of the entropy predictions when trained on different objectives.
 
 ### Objective Scores
 
@@ -157,9 +161,9 @@ In this section, we present results for VGG models trained using spectral normal
 
 To explain Proposition 4.3 in an intuitive way, we focus on on a simple 2D toy case and fit a GMM using the different objectives. We sample "latents" z from 3 Gaussians (each representing a different class y) with 4% label noise. (As mentioned in the proof in the appendix, this is an easy way to see how the objectives will lead to different optima.)
 
-**`min H_θ[Y|Z].`** A softmax linear layer is equivalent to an LDA (Linear Discriminant Analysis) as detailed in "Machine Learning: A Probabilistic Perspective" by Murphy, for example. We optimize an LDA with the usual objective "`min -1/N \sum \log p(y|z)`", i.e. the cross-entropy of `p(y|z)`. Following the appendix, we use the short-hand "`min H_θ[Y|Z]`" for this cross-entropy. (The objective/score is the negative-log likelihood, which is the cross-entropy or a variational approximation of the conditional entropy, depending on how one views it.)
+**`min H_θ[Y|Z].`** A softmax linear layer is equivalent to an LDA (Linear Discriminant Analysis) with conditional likelihood as detailed in "Machine Learning: A Probabilistic Perspective" by Murphy, for example. We optimize an LDA with the usual objective "`min -1/N \sum \log p(y|z)`", i.e. the cross-entropy of `p(y|z)` or  (average) negative log-likelihood NLL. Following the appendix, we use the short-hand "`min H_θ[Y|Z]`" for this cross-entropy.
 
-Because we optimize only `p(y|z)`, `p(z)` does not matter to objective and indeed the components do not actually cover the latents well, as can be seen in the first density plot. However, it does provide the lowest NLL.
+Because we optimize only `p(y|z)`, `p(z)` does not affect the objective and is thus not optimized. Indeed, the components do not actually cover the latents well, as can be seen in the first density plot. However, it does provide the lowest NLL.
 
 **`min H_θ[Y,Z].`** We optimize a GDA for the combined objective "`min -1/N \sum \log q(y, z)`", i.e. the cross-entropy of `q(y, z)`. We use the short-hand "`min H_θ[Y|Z]`" for this.
 
@@ -167,11 +171,17 @@ Because we optimize only `p(y|z)`, `p(z)` does not matter to objective and indee
 
 We see that each solution minimizes its objective the best. The GMM provides the best density model (best fit according to the entropy), while the LDA (like a softmax linear layer) provides the best NLL for the labels. The GDA provides an almost as good density model.
 
-**Entropy.** Looking at the entropy plots, we first notice that the LDA solution optimized for `p(y|z)` provides a much wider decision boundary. This is due to the overlap of the Gaussian components, which is necessary to provide the right aleatoric uncertainty due to the near overlap of the data in the center and the label noise.
+**Entropy.** Looking at the entropy plots, we first notice that the LDA solution optimized for `min H_θ[Y|Z]` has a wide decision boundary. This is due to the overlap of the Gaussian components, which is necessary to provide the right aleatoric uncertainty. 
 
-The GDA solution (optimized for `p(y,z)`) has a much narrower decision boundary and cannot capture aleatoric uncertainty as well. This is reflected in the higher NLL. Moreover, unlike LDA, GDA decision boundaries behave differently than one would naively expect due to the untied covariance matrices. They can be curved and the decisions change far away from the data. (See also "Machine Learning: A Probabilistic Perspective" by Murphy.)
+Optimizing the negative log-likehood `-\log p(y|z)` is a proper scoring rule, and hence is optimized for calibrated predictions. 
 
-We hope this provides good intuitions for the statement of Proposition 4.3. Intuitively, for aleatoric uncertainty, the Gaussian components need to overlap to express high aleatoric uncertainty (uncertain labelling). At the same time, this provides a less density estimates. On the other hand, the GDA density is much better, but this comes at the cost of NLL for classification because it cannot express aleatoric uncertainty that well then. This visualizes that the objectives trade-off between each other, and why we use the softmax layer trained for `p(y|z)` for classification and aleatoric uncertainty, and GDA as density model for `q(z)`.
+Compared to this, the GDA solution (optimized for `min H_θ[Y, Z]`) has a much narrower decision boundary and cannot capture aleatoric uncertainty as well. This is reflected in the higher NLL. Moreover, unlike for LDA, GDA decision boundaries behave differently than one would naively expect due to the untied covariance matrices. They can be curved and the decisions change far away from the data. (See also "Machine Learning: A Probabilistic Perspective" by Murphy.)
+
+To show the difference between the two objectives we have marked one point *(0, -5)* with a yellow star. Under the first objective `min H_θ[Y,Z]`, it has high aleatoric uncertainty (high entropy), as seen in the left entropy plot, while under the second objective (`min H_θ[Y,Z]`), it is only assigned very low entropy. The GDA optimized for the second objective thus is overconfident.
+
+We do show an entropy plot for `Y|Z` for the third objective `min H_θ[Z]` as it does not try to learn class assignments, and hence the different components do not map to classes in order.
+
+We hope this provides good intuitions for the statement of Proposition 4.3. Intuitively, for aleatoric uncertainty, the Gaussian components need to overlap to express high aleatoric uncertainty (uncertain labelling). At the same time, this necessarily provides looser density estimates. On the other hand, the GDA density is much tighther, but this comes at the cost of NLL for classification because it cannot express aleatoric uncertainty that well. This visualizes that the objectives trade-off between each other, and why we use the softmax layer trained for `p(y|z)` for classification and aleatoric uncertainty, and GDA as density model for `q(z)`.
 
 ## Algorithm Box
 
