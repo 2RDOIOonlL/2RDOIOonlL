@@ -92,6 +92,7 @@ In this section, we present results for ensembles of models trained using spectr
 | VGG Ensemble    | 94.9+-0.05  | 2.03+-0.03 | 92.80+-0.18 | 89.01+-0.08     |
 | VGG+SN Ensemble | 94.96+-0.05 | 2.10+-0.08 | 90.36+-0.23 | 88.25+-0.10     |
 
+-- with CIFAR-10 as iD dataset
 
 |     Model       |  Accuracy   |     ECE     | AUROC SVHN  |
 |-----------------|-------------|-------------|-------------|
@@ -100,6 +101,7 @@ In this section, we present results for ensembles of models trained using spectr
 | VGG Ensemble    | 77.84+-0.11 | 5.32+-0.10  | 79.62+-0.73 |
 | VGG+SN Ensemble | 77.98+-0.06 | 3.001+-0.05 | 73.64+-1.03 |
 
+-- with CIFAR-100 as iD dataset
 
 ## Ablation: VGG with SN
 
@@ -108,21 +110,25 @@ In this section, we present results for VGG models trained using spectral normal
 | SN  |       Method       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR100 |
 |-----|--------------------|-------------|------------|-------------|----------------|
 | No  | Softmax            | 93.63+-0.04 | 1.64+-0.03 | 85.76+-0.84 | 82.48+-0.14    |
-| No  | Energy-based model | 93.63+-0.04 | 1.64+-0.03 | 84.24+-1.04 | 81.91+-0.17    |
-| No  | GMM Density        | 93.63+-0.04 | 1.64+-0.03 | 89.25+-0.36 | 86.55+-0.10    |
 | Yes | Softmax            | 93.56+-0.03 | 1.69+-0.04 | 86.55+-0.51 | 82.40+-0.09    |
+| No  | Energy-based model | 93.63+-0.04 | 1.64+-0.03 | 84.24+-1.04 | 81.91+-0.17    |
 | Yes | Energy-based model | 93.56+-0.03 | 1.69+-0.04 | 84.77+-0.68 | 81.79+-0.11    |
+| No  | GMM Density        | 93.63+-0.04 | 1.64+-0.03 | 89.25+-0.36 | 86.55+-0.10    |
 | Yes | GMM Density        | 93.56+-0.03 | 1.69+-0.04 | 89.51+-0.33 | 86.52+-0.12    |
+
+-- with CIFAR-10 as iD dataset
 
 
 | SN  |       Method       |  Accuracy   |    ECE     | AUROC SVHN  |
 |-----|--------------------|-------------|------------|-------------|
 | No  | Softmax            | 73.48+-0.05 | 4.46+-0.05 | 76.73+-0.72 |
-| No  | Energy-based model | 73.48+-0.05 | 4.46+-0.05 | 77.70+-0.86 |
-| No  | GMM Density        | 73.48+-0.05 | 4.46+-0.05 | 75.65+-0.95 |
 | Yes | Softmax            | 73.56+-0.05 | 4.49+-0.06 | 76.43+-0.74 |
+| No  | Energy-based model | 73.48+-0.05 | 4.46+-0.05 | 77.70+-0.86 |
 | Yes | Energy-based model | 73.56+-0.05 | 4.49+-0.06 | 77.07+-0.84 |
+| No  | GMM Density        | 73.48+-0.05 | 4.46+-0.05 | 75.65+-0.95 |
 | Yes | GMM Density        | 73.56+-0.05 | 4.49+-0.06 | 75.05+-1.41 |
+
+-- with CIFAR-100 as iD dataset
 
 ## Toy example: Separate Objectives
 
