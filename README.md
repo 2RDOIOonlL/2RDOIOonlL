@@ -124,6 +124,16 @@ In this section, we present results for VGG models trained using spectral normal
 | Yes | Energy-based model | 73.56+-0.05 | 4.49+-0.06 | 77.07+-0.84 |
 | Yes | GMM Density        | 73.56+-0.05 | 4.49+-0.06 | 75.05+-1.41 |
 
+## Toy example: Separate Objectives
+
+<span>
+<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/separate_objective_1.png" width="80%">
+</span>
+
+<span>
+<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/separate_objective_2.png" width="80%">
+</span>
+
 ## Algorithm Box
 
 In order to shorten the algorithm section, we plan on merging the text in Section 5 (Algorithm) of the paper with Appendix B (Additional Architectural Changes). We will rename Appendix B to "DDU Algorithm". In the main paper, we instead plan on putting a succinct algorithm box as shown below.
