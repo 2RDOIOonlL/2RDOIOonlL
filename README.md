@@ -83,7 +83,8 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 
 ## Ablation: VGG with SN
 
-In this section, we present results for VGG models trained using spectral normalization (SN). The first table below is for VGG models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. We note that SN does not improve the OoD detection performance for VGG models. The VGG architecture, due to the lack of residual connections, does not encourage sensitivity in the feature space. Addition of SN does not help with sensitivity either as SN encourages smoothness in the feature space by upper bounding the Lipschitzness of the model. Hence, we don't see an improvement in performance for VGG models trained with spectral normalization.
+In this section, we present results for VGG models trained using spectral normalization (SN). The first table below is for VGG models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. We note that SN does not improve the OoD detection performance for VGG models. A possible explanation for this observation is that the VGG architecture, even with spectral normalisation, does not encourage sensitivity to changes in the input space, unlike residual architectures. This can be deduced from Tables 3 and 4 in the appendix, and from Figure 1(d) in the paper. From the theory perspective, in SNGP the residual connections are required in the proof which shows that the bounded spectral norm of the weights affects the function's Lipschitz constant.
+
 
 | SN  |       Method       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR100 |
 |-----|--------------------|-------------|------------|-------------|----------------|
