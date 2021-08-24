@@ -124,4 +124,14 @@ In this section, we present results for VGG models trained using spectral normal
 | Yes | Energy-based model | 73.56+-0.05 | 4.49+-0.06 | 77.07+-0.84 |
 | Yes | GMM Density        | 73.56+-0.05 | 4.49+-0.06 | 75.05+-1.41 |
 
+## Algorithm Box
+
+<span>
+<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/ddu_algorithm.png" width="50%">
+</span>
+
+<span>
+<img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/ddu_pseudocode.png" width="50%">
+</span>
+
 Are there any additional experiments you could suggest to study the properties of the uncertainty? We will gladly try to provide additional results during the rebuttal phase.
