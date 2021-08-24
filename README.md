@@ -113,7 +113,7 @@ In this section, we present results for VGG models trained using spectral normal
 
 In this section, we present results for ensembles of models trained using spectral normalization (SN). The first table below is for models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. All the results have been reported using predictive entropy as the uncertainty metric. 
 
-We note that in general, ensembles of models trained with SN don't outperform those trained without SN. Note that although the AUROC for the WRN+SN ensemble is slightly higher than the WRN ensemble, it is still within the standard error and hence, not statistically significant.
+We note that in general, ensembles of models trained with SN don't outperform those trained without SN. Note that although the AUROC for the WRN+SN ensemble trained on CIFAR-100 is slightly higher than the WRN ensemble, it is still within the standard error and hence, not statistically significant.
 
 |     Model       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR-100 |
 |-----------------|-------------|------------|-------------|-----------------|
