@@ -81,28 +81,6 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 | 10% of D-MNIST  |                  0.8295 | -1279.1753              |
 
 
-## Ablation: Ensemble with SN
-
-In this section, we present results for ensembles of models trained using spectral normalization (SN). The first table below is for models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. All the results have been reported using predictive entropy as the uncertainty metric. We note that in general, ensembles of models trained with SN don't outperform those trained without SN.
-
-|     Model       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR-100 |
-|-----------------|-------------|------------|-------------|-----------------|
-| WRN Ensemble    | 96.59+-0.02 | 0.76+-0.03 | 97.73+-0.31 | 92.13+-0.02     |
-| WRN+SN Ensemble | 96.68+-0.03 | 0.82+-0.05 | 97.59+-0.08 | 91.30+-0.07     |
-| VGG Ensemble    | 94.9+-0.05  | 2.03+-0.03 | 92.80+-0.18 | 89.01+-0.08     |
-| VGG+SN Ensemble | 94.96+-0.05 | 2.10+-0.08 | 90.36+-0.23 | 88.25+-0.10     |
-
--- with CIFAR-10 as iD dataset
-
-|     Model       |  Accuracy   |     ECE     | AUROC SVHN  |
-|-----------------|-------------|-------------|-------------|
-| WRN Ensemble    | 82.79+-0.10 | 3.32+-0.09  | 79.54+-0.91 |
-| WRN+SN Ensemble | 83.06+-0.07 | 2.17+-0.1   | 80.30+-0.85 |
-| VGG Ensemble    | 77.84+-0.11 | 5.32+-0.10  | 79.62+-0.73 |
-| VGG+SN Ensemble | 77.98+-0.06 | 3.001+-0.05 | 73.64+-1.03 |
-
--- with CIFAR-100 as iD dataset
-
 ## Ablation: VGG with SN
 
 In this section, we present results for VGG models trained using spectral normalization (SN). The first table below is for VGG models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. We note that SN does not improve the OoD detection performance for VGG models. The VGG architecture, due to the lack of residual connections, does not encourage sensitivity in the feature space. Addition of SN does not help with sensitivity either as SN encourages smoothness in the feature space by upper bounding the Lipschitzness of the model. Hence, we don't see an improvement in performance for VGG models trained with spectral normalization.
@@ -127,6 +105,28 @@ In this section, we present results for VGG models trained using spectral normal
 | Yes | Energy-based model | 73.56+-0.05 | 4.49+-0.06 | 77.07+-0.84 |
 | No  | GMM Density        | 73.48+-0.05 | 4.46+-0.05 | 75.65+-0.95 |
 | Yes | GMM Density        | 73.56+-0.05 | 4.49+-0.06 | 75.05+-1.41 |
+
+-- with CIFAR-100 as iD dataset
+
+## Ablation: Ensemble with SN
+
+In this section, we present results for ensembles of models trained using spectral normalization (SN). The first table below is for models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. All the results have been reported using predictive entropy as the uncertainty metric. We note that in general, ensembles of models trained with SN don't outperform those trained without SN.
+
+|     Model       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR-100 |
+|-----------------|-------------|------------|-------------|-----------------|
+| WRN Ensemble    | 96.59+-0.02 | 0.76+-0.03 | 97.73+-0.31 | 92.13+-0.02     |
+| WRN+SN Ensemble | 96.68+-0.03 | 0.82+-0.05 | 97.59+-0.08 | 91.30+-0.07     |
+| VGG Ensemble    | 94.9+-0.05  | 2.03+-0.03 | 92.80+-0.18 | 89.01+-0.08     |
+| VGG+SN Ensemble | 94.96+-0.05 | 2.10+-0.08 | 90.36+-0.23 | 88.25+-0.10     |
+
+-- with CIFAR-10 as iD dataset
+
+|     Model       |  Accuracy   |     ECE     | AUROC SVHN  |
+|-----------------|-------------|-------------|-------------|
+| WRN Ensemble    | 82.79+-0.10 | 3.32+-0.09  | 79.54+-0.91 |
+| WRN+SN Ensemble | 83.06+-0.07 | 2.17+-0.1   | 80.30+-0.85 |
+| VGG Ensemble    | 77.84+-0.11 | 5.32+-0.10  | 79.62+-0.73 |
+| VGG+SN Ensemble | 77.98+-0.06 | 3.001+-0.05 | 73.64+-1.03 |
 
 -- with CIFAR-100 as iD dataset
 
