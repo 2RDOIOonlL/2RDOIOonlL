@@ -138,18 +138,20 @@ In this section, we present results for VGG models trained using spectral normal
 </span>
 
 ### Entropy Plots
+
 <span>
 <img src="https://github.com/2RDOIOonlL/2RDOIOonlL/blob/main/separate_objective_2.png" width="80%">
 </span>
 
 ### Objective Scores
 
-| Objective | `H_θ[Y|Z]` | `H_θ[Y,Z]` | `H_θ[Z]` |
-|------------------------|----------|----------|----------|
-| `min H_θ[Y|Z]`         |**0.1794**| 5.4924   | 5.2995   |
-| `min H_θ[Y,Z]`         | 0.2165   |**4.9744**| 4.7580   |
-| `min H_θ[Z]`           |  n/a     |  n/a     |**4.7073**|
 
+| Objective | `H_θ[Y\|Z]` | `H_θ[Y,Z]` | `H_θ[Z]` |
+|--|--|--|--|
+| `min H_θ[Y\|Z]`         | **0.1794** | 5.4924   | 5.2995   |
+| `min H_θ[Y,Z]`         | 0.2165   | **4.9744** | 4.7580   |
+| `min H_θ[Z]`           |  n/a     |  n/a     | **4.7073** |
+ 
 
 ### Description
 
@@ -161,7 +163,7 @@ Because we optimize only `p(y|z)`, `p(z)` does not matter to objective and indee
 
 **`min H_θ[Y,Z].`** We optimize a GDA for the combined objective "`min -1/N \sum \log q(y, z)`", i.e. the cross-entropy of `q(y, z)`. We use the short-hand "`min H_θ[Y|Z]`" for this.
 
-**`min H_θ[Z].`** We optimize a GMM for the objective "`min -1/N \sum \log q(z)`", i.e. the cross-entropy of `q(z)`. AWe use the short-hand "`min H_θ[Z]`" for this.
+**`min H_θ[Z].`** We optimize a GMM for the objective "`min -1/N \sum \log q(z)`", i.e. the cross-entropy of `q(z)`. We use the short-hand "`min H_θ[Z]`" for this.
 
 We see that each solution minimizes its objective the best. The GMM provides the best density model (best fit according to the entropy), while the LDA (like a softmax linear layer) provides the best NLL for the labels. The GDA provides an almost as good density model.
 
