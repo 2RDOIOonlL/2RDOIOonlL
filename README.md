@@ -83,7 +83,7 @@ All of this is consistent with the experiments comparing epistemic and aleatoric
 
 ## Ablation: Ensemble with SN
 
-In this section, we present results for ensembles of models trained using spectral normalization (SN). The first table below is for models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. We note that in general, ensembles of models trained with SN don't outperform those trained without SN.
+In this section, we present results for ensembles of models trained using spectral normalization (SN). The first table below is for models trained on CIFAR-10 and the next table is for models trained on CIFAR-100. All the results have been reported using predictive entropy as the uncertainty metric. We note that in general, ensembles of models trained with SN don't outperform those trained without SN.
 
 |     Model       |  Accuracy   |    ECE     | AUROC SVHN  | AUROC CIFAR-100 |
 |-----------------|-------------|------------|-------------|-----------------|
